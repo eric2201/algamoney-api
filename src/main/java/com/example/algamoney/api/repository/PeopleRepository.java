@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PeopleRepository extends JpaRepository<PeopleEntity, Long> {
 
-    PeopleEntity findByCode(int code);
+    PeopleEntity findById(Long id);
 }

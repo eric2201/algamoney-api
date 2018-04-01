@@ -13,13 +13,13 @@ public class ResourceCreatedListener implements ApplicationListener<ResourceCrea
     @Override
     public void onApplicationEvent(ResourceCreatedEvent resourceCreatedEvent) {
         HttpServletResponse response = resourceCreatedEvent.getResponse();
-        int code = resourceCreatedEvent.getCode();
+        Long code = resourceCreatedEvent.getCode();
 
         addHeaderLocation(response, code);
 
     }
 
-    private void addHeaderLocation(HttpServletResponse response, int code) {
+    private void addHeaderLocation(HttpServletResponse response, Long code) {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{code}")
                 .buildAndExpand(code).toUri();
         response.setHeader("Location", uri.toASCIIString());

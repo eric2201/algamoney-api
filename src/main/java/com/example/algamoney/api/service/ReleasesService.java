@@ -2,24 +2,26 @@ package com.example.algamoney.api.service;
 
 import com.example.algamoney.api.model.CategoryEntity;
 import com.example.algamoney.api.model.PeopleEntity;
-import com.example.algamoney.api.model.LaunchEntity;
+import com.example.algamoney.api.model.ReleasesEntity;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-public interface LaunchService {
+@Component
+public interface ReleasesService {
 
-    void createRelationship (LaunchEntity launchEntity);
+    void createReleases (ReleasesEntity releasesEntity);
 
-    void updateRelationship (LaunchEntity launchEntity, int code);
+    void updateReleases (ReleasesEntity releasesEntity);
 
-    void deleteRelationship (LaunchEntity launchEntity);
+    void deleteReleases (Long id);
 
-    List<LaunchEntity> listByPeople (PeopleEntity peopleEntity);
+    List<ReleasesEntity> listByPeople (PeopleEntity peopleEntity);
 
-    List<LaunchEntity> listByCategory(CategoryEntity categoryEntity);
+    List<ReleasesEntity> listByCategory(CategoryEntity categoryEntity);
 
-    List<LaunchEntity> listAllLaunch();
+    List<ReleasesEntity> listAllReleases();
 
-    List<LaunchEntity> findByCategoryPeople(CategoryEntity categoryEntity, PeopleEntity peopleEntity);
+    List<ReleasesEntity> findByCategoryPeople(CategoryEntity categoryEntity, PeopleEntity peopleEntity);
 
 }

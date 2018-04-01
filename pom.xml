@@ -40,15 +40,21 @@
             	<artifactId>mysql-connector-java</artifactId>
             	<scope>runtime</scope>
             </dependency>
-
-
-
+          <dependency>
+              <groupId>org.mapstruct</groupId>
+              <artifactId>mapstruct</artifactId> <!-- use mapstruct-jdk8 for Java 8 or higher -->
+              <version>1.2.0.Final</version>
+          </dependency>
           <dependency>
               <groupId>org.projectlombok</groupId>
               <artifactId>lombok</artifactId>
               <version>1.14.6</version>
               <scope>provided</scope>
           </dependency>
+          <!--<dependency>-->
+              <!--<groupId>org.springframework.boot</groupId>-->
+              <!--<artifactId>spring-boot-starter-security</artifactId>-->
+          <!--</dependency>-->
 
       </dependencies>
   
@@ -77,10 +83,26 @@
                         <execution>
                             <phase>process-resources</phase>
                             <goals>
-                                <goal>update</goal>
+                                <goal>generateChangeLog</goal>
                             </goals>
                         </execution>
                     </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.5.1</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>org.mapstruct</groupId>
+                                <artifactId>mapstruct-processor</artifactId>
+                                <version>1.2.0.Final</version>
+                            </path>
+                        </annotationProcessorPaths>
+                    </configuration>
                 </plugin>
             </plugins>
       </build>

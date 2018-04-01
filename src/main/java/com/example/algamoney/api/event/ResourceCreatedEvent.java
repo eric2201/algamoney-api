@@ -16,20 +16,20 @@ public class ResourceCreatedEvent extends ApplicationEvent {
 
     private HttpServletResponse response;
 
-    private int code;
+    private Long code;
 
-    public ResourceCreatedEvent(Object source, HttpServletResponse response, int code) {
+    public ResourceCreatedEvent(Object source, HttpServletResponse response, Long code) {
         super(source);
         this.response = response;
         this.code = code;
 
     }
 
-    public int getCode() {
+    public Long getCode() {
         return code;
     }
 
-    public void setCode(int code) {
+    public void setCode(Long code) {
         this.code = code;
     }
 

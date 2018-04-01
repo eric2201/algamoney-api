@@ -1,6 +1,6 @@
 package com.example.algamoney.api.model;
 
-public enum LaunchType {
+public enum ReleasesType {
     EXPENSE,
     RECIPT
 }

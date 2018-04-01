@@ -8,13 +8,13 @@ public interface PeopleService {
 
     void savePeople(PeopleEntity peopleEntity);
 
-    void updatePeople(PeopleEntity peopleEntity, int code);
+    void updatePeople(PeopleEntity peopleEntity, Long id);
 
-    void deletePeople(int code);
+    void deletePeople(Long id);
 
     void isNotNull(String name);
 
-    PeopleEntity findByCode(int code);
+    PeopleEntity findByCode(Long id);
 
     List<PeopleEntity> findAllPeople();
 
